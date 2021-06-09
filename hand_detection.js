@@ -67,8 +67,7 @@ export default class HandDetection {
       this.canvasElement.height
     );
     this.rightHand.updateLandmarks(results.rightHandLandmarks);
-    //this.rightHand.draw(this.canvasCtx);
-    this.rightHand.showRaisedFingers();
+    this.rightHand.draw(this.canvasCtx);
     if (results.leftHandLandmarks) {
       this.leftHand.updateLandmarks(results.leftHandLandmarks);
       this.leftHand.draw(this.canvasCtx);

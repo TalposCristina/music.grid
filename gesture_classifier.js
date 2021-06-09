@@ -1,6 +1,6 @@
 export default class GestureClassifier {
   constructor() {
-    this.gestureIds = [0, 1, 2, 3, 4];
+    this.gestureIds = [];
     this.defaultExamples = 0;
   }
 

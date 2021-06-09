@@ -20,47 +20,6 @@ export default class RightHand {
     this.landmarks = landmarks;
   }
 
-  showRaisedFingers() {
-    let raisedFingers = 0;
-    const landmarks = this.landmarks;
-    if (landmarks) {
-      for (let i = 2; i <=5; i++) {
-        const fingerTip = landmarks[4 * i];
-        const fingerDIP = landmarks[4 * i - 1];
-        if (fingerTip.y < fingerDIP.y) {
-          raisedFingers++;
-        }
-      }
-      if (landmarks[4].x > landmarks[3].x) {
-        raisedFingers++;
-      }
-    }
-    document.querySelector('#raisedFingers').innerText = `Number of raised fingers: ${raisedFingers}`;
-  }
-
-  computeDistance(fingerTip, fingerMCP) {
-    const { x: x1, y: y1 } = fingerTip;
-    const { x: x2, y: y2 } = fingerMCP;
-    return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-  }
-
-  showRaisedFingersAlternativeVersion() {
-    let raisedFingers = 0;
-    const landmarks = this.landmarks;
-    if (landmarks) {
-      for (let i = 1; i <= 5; i++) {
-        const fingerTip = landmarks[4 * i];
-        const fingerMCP = landmarks[4 * i - 3];
-        let distance = 0;
-        fingerTip && fingerMCP && (distance = this.computeDistance(fingerTip, fingerMCP));
-        if (distance > 0.1) {
-          raisedFingers++;
-        }
-      }
-    }
-    document.querySelector('#raisedFingers').innerText = `Number of raised fingers: ${raisedFingers}`;
-  }
-
   draw(ctx) {
     this.indexFingerTip = this.landmarks && this.landmarks[8];
     if (this.indexFingerTip) {

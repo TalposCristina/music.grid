@@ -16,14 +16,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
   </head>
   <body>
+    <script>
+      var wrongsnd = new Audio("/Tema5/wrong.wav");
+      var correctsnd = new Audio("/Tema5/correct.wav")
+          </script>
     <div id="app-container">
       <div id="grid-container">
+        <h4 style="text-align:center;">1.Care este cel lung fluviu din Europa?</h2>
+          <div class="button" onclick="wrongsnd.play()">Dunare</div>
+          <div class="button" onclick="correctsnd.play()">Volga</div>
+           <div class="button" onclick="wrongsnd.play()"> Rin</div>
       </div>
     </div>
-    <div id="box"></div>
     <video id="video-input"></video>
     <canvas id="canvas-output" width="780" height="439"></canvas>
     <div id="distance"></div>
-    <div id="raisedFingers">Number of raised fingers: 0</div>
   </body>
 </html>

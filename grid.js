@@ -16,32 +16,7 @@ export class Grid {
     this.draw();
   }
 
-  startPlaying(playBtn) {
-    this.currentPlayedRow = 0;
-    playBtn.innerText = "Stop";
-    this.isPlaying = true;
-    this.play();
-  }
 
-  stopPlaying(playBtn) {
-    playBtn.innerText = "Play";
-    this.isPlaying = false;
-  }
-
-  addPlayBtn() {
-    const playBtn = document.createElement('div');
-    playBtn.classList.add('grid-play-btn');
-    playBtn.innerText = "Play";
-
-    playBtn.addEventListener('click', () => {
-      if (this.isPlaying) {
-        this.stopPlaying(playBtn)
-      } else {
-        this.startPlaying(playBtn)
-      }
-    })
-    this.gridContainer.append(playBtn);
-  }
 
   addResetBtn() {
     const resetBtn = document.createElement('div');
@@ -124,7 +99,7 @@ export class Grid {
   }
 
   addGestureCell(className) {
-   /*  const row = this.gridContainer.getElementsByClassName(this.rowClass)[this.currentPlayedRow || 0];
+     const row = this.gridContainer.getElementsByClassName(this.rowClass)[this.currentPlayedRow || 0];
     if (row.getElementsByClassName('gesture-cell').length > 4) return;
     const gestureCell = document.createElement('div');
     gestureCell.classList.add(this.cellClass);
@@ -133,7 +108,7 @@ export class Grid {
     gestureCell.addEventListener('click', () => {
       gestureCell.remove();
     })
-    row.append(gestureCell); */
+    row.append(gestureCell);
 
     let box = document.getElementById('box');
     box.classList = '';
