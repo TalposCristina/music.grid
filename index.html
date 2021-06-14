@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Augmented Rythms</title>
+    <title>Tema 6</title>
     <link href="index.css" rel="stylesheet"/>
     <script type="module" src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
-    <!-- Load TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <!-- Load MobileNet -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
-    <!-- Load KNN Classifier -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.12/Tone.js" integrity="sha512-MyXAzMk3sw/i85erXXKd2+z2fzlmKD15TzKKwZd541ifNwUQ8Z73CfAwuyIPc0p5bL7xEA3u/l+/V0K9IyPbCg==" crossorigin="anonymous"></script>
   </head>
   <body>
-    <script>
-      var wrongsnd = new Audio("/Tema5/wrong.wav");
-      var correctsnd = new Audio("/Tema5/correct.wav")
-          </script>
     <div id="app-container">
       <div id="grid-container">
-        <h4 style="text-align:center;">1.Care este cel lung fluviu din Europa?</h2>
-          <div class="button" onclick="wrongsnd.play()">Dunare</div>
-          <div class="button" onclick="correctsnd.play()">Volga</div>
-           <div class="button" onclick="wrongsnd.play()"> Rin</div>
       </div>
     </div>
+    <div id="box"></div>
     <video id="video-input"></video>
     <canvas id="canvas-output" width="780" height="439"></canvas>
     <div id="distance"></div>
+    <div class="showRaisedFingers"></div>
   </body>
 </html>
